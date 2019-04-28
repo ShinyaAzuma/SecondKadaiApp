@@ -9,12 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+  
 
+    @IBAction func button(_ sender: Any) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBOutlet weak var textfield: UITextField!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        
+        resultViewController.text = textfield.text! 
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
 
-
+    }
 }
-
